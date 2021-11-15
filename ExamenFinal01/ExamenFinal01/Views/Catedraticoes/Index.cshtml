@@ -1,0 +1,53 @@
+﻿@model IEnumerable<ExamenFinal01.Models.Catedratico>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CodigoCatedratico)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NombresCatedratico)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ApellidosCatedratico)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EstadoCatedratico)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CodigoCatedratico)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NombresCatedratico)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ApellidosCatedratico)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EstadoCatedratico)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.CodigoCatedratico">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.CodigoCatedratico">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.CodigoCatedratico">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
